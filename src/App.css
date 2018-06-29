@@ -1,0 +1,95 @@
+.Form{
+    text-align: center;
+    width: 75%;
+    margin: 20px auto
+}
+
+button{
+    padding:10px; 
+    border: none;
+    font-size: 20px;
+    background: green;
+
+    
+}
+button:hover{
+    box-shadow: 2px 2px 2px black;
+}
+
+input{
+     width: 80%;
+     padding: 8px;
+     font-size: 20px;
+    
+     margin-right: 5px;
+     
+    
+}
+
+
+
+
+.Album{
+    margin: 30px 200px;
+     width: 75%;
+    
+    display: flex;
+    flex-direction:row;
+    height: 438px;
+  
+
+}
+.Information{
+     position: absolute;
+     color: white;
+     bottom: 0;
+     left: 0;
+     z-index: 1;
+     background: rgba(0, 0, 0, 0.5);
+     width: 100%;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    display: inline-block;
+    padding:  20px 16px
+    
+}
+div>img{
+  
+    width: auto; 
+    height: 100%;
+   
+    
+}
+.Details{
+    position: relative;
+    flex: 70%;
+    margin-right: 10px;
+   
+}
+.ImageList{
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+   
+}
+.ImageList img{
+    max-width: 100%;
+    
+    max-height: 100%;
+}
+.All{
+    width: 150px;
+    height: 106px;
+    margin-bottom: 5px;
+    background: black;
+    cursor: pointer;
+    
+}
+.All:hover{
+    box-shadow: 5px 5px 5px grey
+}
