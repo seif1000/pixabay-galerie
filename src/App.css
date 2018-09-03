@@ -1,95 +1,173 @@
+body{
+   background:#1a1a1a;
+ 
+  
+}
 .Form{
-    text-align: center;
     width: 75%;
-    margin: 20px auto
-}
+    padding-top: 20px;
+    margin: auto;
 
-button{
-    padding:10px; 
-    border: none;
+}
+/*form*/
+form{
+    width: 100%;
+    
+    position: relative;
     font-size: 20px;
-    background: green;
-
     
-}
-button:hover{
-    box-shadow: 2px 2px 2px black;
-}
-
-input{
-     width: 80%;
-     padding: 8px;
-     font-size: 20px;
-    
-     margin-right: 5px;
-     
-    
-}
-
-
-
-
-.Album{
-    margin: 30px 200px;
-     width: 75%;
-    
-    display: flex;
-    flex-direction:row;
-    height: 438px;
-  
-
-}
-.Information{
-     position: absolute;
-     color: white;
-     bottom: 0;
-     left: 0;
-     z-index: 1;
-     background: rgba(0, 0, 0, 0.5);
-     width: 100%;
-}
-ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-li{
-    display: inline-block;
-    padding:  20px 16px
-    
-}
-div>img{
-  
-    width: auto; 
-    height: 100%;
    
+   
+}
+input{
+    outline: none;
+    width: 100%;
+    padding: 16px 5px;
+    font-size: 20px;
+    background: #0d0d0d;
+    border: none;
+    color: white;
     
+}
+button{
+    color: white;
+    position: absolute;
+    font-size: 20px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    left: 97%;
+    top: 10px;
+}
+/*album*/
+img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.Album{
+    width: 100%;
+    display: grid;
+    grid-gap: 0.6em;
+   grid-template-columns:80% 19%;
+   margin-top:1em;
 }
 .Details{
+    width: 100%;
     position: relative;
-    flex: 70%;
+}
+.Information{
+    max-height: 100px;
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+ 
+    bottom: 0;
+    left: 0;
+    color: white;
+}
+.Information ul {
+    list-style: none;
+    margin: 0;
+    padding: 16px;
+}
+.Information li {
+    list-style: none;
     margin-right: 10px;
-   
+    padding: 0;
+    display: inline-block;
 }
 .ImageList{
-    flex: 30%;
-    display: flex;
-    flex-direction: column;
-   
+    width: 100%;
 }
 .ImageList img{
-    max-width: 100%;
-    
-    max-height: 100%;
+    cursor: pointer;
 }
 .All{
-    width: 150px;
-    height: 106px;
-    margin-bottom: 5px;
-    background: black;
-    cursor: pointer;
-    
+    margin-bottom: 8px;
 }
-.All:hover{
-    box-shadow: 5px 5px 5px grey
+.More{
+    width: 100%;
+    background:black;
+    color: white;
+   
+    text-align: center;
+    cursor: pointer;
+    margin: 0.8em auto;
+
+}
+.More p{
+   display: block;
+   padding: 10px;
+}
+.More :hover{
+    background:#404040;
+}
+.AllImages{
+    display: grid;
+    grid-gap: 0.8em;
+    grid-template-columns:  repeat(auto-fit, minmax(200px, 1fr));
+}
+.MoreImages{
+   height: 150px;
+   cursor: pointer;
+}
+.Card{
+    text-align: center;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 1;
+    display: none;
+    z-index: 1;
+  
+}
+.Card img{
+    text-align: center;
+    width: 50%;
+    max-height: 500px;
+    margin: auto;
+    margin-top: 100px;
+    opacity: 1;
+    
+   
+    
+  }
+
+ .Close{
+      float: right;
+      font-size: 40px;
+      font-weight: bold;
+      color: #fff;
+      padding: 1em;
+      cursor: pointer;
+    }
+
+@media(max-width:800px){
+    .Album{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .ImageList{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+        grid-gap: 1px;
+       
+    }
+    button{
+        left: 94%;
+    }
+    .Card img{
+        text-align: center;
+        width: 90%;
+       height: 250px;
+        margin: auto;
+        margin-top: 100px;
+        opacity: 1;
+        
+       
+        
+      }
 }

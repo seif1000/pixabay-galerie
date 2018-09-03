@@ -1,22 +1,31 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
-import {selelctImage }from '../action';
+import * as actions from '../action';
+import classes from '../App.css';
+
 
 
 
  class ImagesResult extends Component {
-     
-    
-  
+     state = {
+         show:false
+     }
    
   render() {
-    console.log(this.props.first)
+   
     const imagesResult = this.props.images.map(img=>{
      
           return(
-              <div className="All">
-              <img src={img.largeImageURL} onClick={()=>{this.props.selectImage(img)}}/>
+              <div className={classes.All}>
+              <img 
+              src={img.largeImageURL} 
+              onClick={()=>{
+                  this.props.selelctImage(img)
+                 
+
+                  
+                   } }
+              />
               </div>
           )
       
@@ -32,42 +41,71 @@ import {selelctImage }from '../action';
         
         likes = (<ul>
 
-                <li>{this.props.first.likes} <i class="fas fa-heart"></i></li>
-                <li>{this.props.first.downloads} <i class="fas fa-download"></i></li>
-                <li>{this.props.first.comments} <i class="far fa-comment"></i></li>
+                <li>{this.props.first.likes} <i className="fas fa-heart"></i></li>
+                <li>{this.props.first.downloads} <i className="fas fa-download"></i></li>
+                <li>{this.props.first.comments} <i className="far fa-comment"></i></li>
 
                 </ul>)
                 
     }
    
+    
     return (
-       <div className='Album'>
-          <div className='Details'>
+        <React.Fragment>
+       <div className={classes.Album}>
+          <div className={classes.Details}  >
               {imageDetails}
-            <div className='Information'>
+            <div className={classes.Information}>
                 {likes}
             </div>
 
           </div>
-          <div className="ImageList">
+          <div className={classes.ImageList}>
              {imagesResult}
           </div>
-           
+        
+          
         </div>
+        <div onClick={()=>{this.props.clickHnadle()}} className={classes.More}  >
+           <p >show more images</p>
+        </div>
+        <div className={classes.AllImages}>
+            {
+              this.props.moreImages.map(img=>{
+     
+             return(
+                  <div  className={classes.MoreImages} 
+                       onClick={()=>{
+                        this.props.ZoomImage(img.largeImageURL)
+                         
+                       }
+                           
+                       }>
+                    <img src={img.largeImageURL}  />
+                  </div>
+                  )
+ 
+                }) 
+            }
+        </div>
+      
+        
+        </React.Fragment>
     )
   }
 }
-const mapDispatchToProps = (dispatch)=>{
-    return bindActionCreators({selectImage:selelctImage},dispatch)
-   }
+
 const mapStateToProps = (state)=>{
     return {
+        moreImages:state.images.fullList,
         images:state.images.listImage,
         first:state.images.first,
+      
+    
        
       
     }
    }
-export default connect(mapStateToProps,mapDispatchToProps)(ImagesResult);
+export default connect(mapStateToProps,actions)(ImagesResult);
 
 
