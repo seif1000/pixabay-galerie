@@ -2,6 +2,7 @@
   "name": "pixabay-galerie",
   "version": "0.1.0",
   "private": true,
+   "homepage": "https://seif1000.github.io/pixabay-galerie",
   "dependencies": {
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -54,6 +55,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom", 
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
      
   },
