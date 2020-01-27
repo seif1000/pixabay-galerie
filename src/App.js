@@ -6,7 +6,7 @@ import { createStore, applyMiddleware } from "redux";
 import ReduxPromise from "redux-promise";
 import{ reducers} from "./reducer";
 import SearchBar from './container/search_bar';
-import classes from './App.css'
+import './App.css'
 
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -15,7 +15,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={createStoreWithMiddleware(reducers)}>
-      <div className={classes.App}>
+      <div className="App">
        <SearchBar/>
       </div>
       </Provider>

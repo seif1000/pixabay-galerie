@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import * as actions from '../action';
-import classes from '../App.css';
+import '../App.css';
+
 
 
 
@@ -16,7 +17,7 @@ import classes from '../App.css';
     const imagesResult = this.props.images.map(img=>{
      
           return(
-              <div className={classes.All}>
+              <div className="All">
               <img 
               src={img.largeImageURL} 
               onClick={()=>{
@@ -52,29 +53,29 @@ import classes from '../App.css';
     
     return (
         <React.Fragment>
-       <div className={classes.Album}>
-          <div className={classes.Details}  >
+       <div className="Album">
+          <div className="Details"  >
               {imageDetails}
-            <div className={classes.Information}>
+            <div className="Information">
                 {likes}
             </div>
 
           </div>
-          <div className={classes.ImageList}>
+          <div className="ImageList">
              {imagesResult}
           </div>
         
           
         </div>
-        <div onClick={()=>{this.props.clickHnadle()}} className={classes.More}  >
+        <div onClick={()=>{this.props.clickHnadle()}} className="More"  >
            <p >show more images</p>
         </div>
-        <div className={classes.AllImages}>
+        <div className="AllImages">
             {
               this.props.moreImages.map(img=>{
      
              return(
-                  <div  className={classes.MoreImages} 
+                  <div  className="MoreImages"
                        onClick={()=>{
                         this.props.ZoomImage(img.largeImageURL)
                          

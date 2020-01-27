@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import * as actions from "../action";
 import {connect} from 'react-redux';
 import {submitForm} from '../action';
-import classes from '../App.css';
 import ImagesResult from './imagesResult';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -37,12 +36,12 @@ import 'font-awesome/css/font-awesome.min.css';
   
     return (
      <React.Fragment>
-         <div className={classes.Card} style={{display:this.state.show?'block':'none'}}>
-            <span onClick={()=>{this.setState({show:false})}} class={classes.Close}> &times; </span>
+         <div className="Card" style={{display:this.state.show?'block':'none'}}>
+            <span onClick={()=>{this.setState({show:false})}} class="Close"> &times; </span>
             <img src={this.props.zoome} alt=""/>
             
           </div>
-         <div className={classes.Form}>
+         <div className="Form">
         <form onSubmit={this.submitHandler} >
            
             <input type="text" onChange={this.changeHandler} placeholder='search for images...'/>
