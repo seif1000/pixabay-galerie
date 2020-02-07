@@ -22,6 +22,9 @@ import 'font-awesome/css/font-awesome.min.css';
     submitHandler = (e)=>{
       e.preventDefault();
       this.props.submitForm(this.state.term)
+      this.setState({
+        term:""
+      })
      
     }
     changeHandler = (e)=>{
@@ -41,16 +44,12 @@ import 'font-awesome/css/font-awesome.min.css';
             <img src={this.props.zoome} alt=""/>
             
           </div>
-         <div className="Form">
+        <div className="Form">
         <form onSubmit={this.submitHandler} >
-           
-            <input type="text" onChange={this.changeHandler} placeholder='search for images...'/>
-           
-       
-            <button type='submit'><i className="fa fa-search"></i></button>
-          
-            
 
+           <input type="search" onChange={this.changeHandler} placeholder='search for images...'/>
+           <button type='submit'><i className="fa fa-search"></i></button>
+           
         </form>
         {this.props.images.length===0?<p style={{fontSize:'28px',textAlign:'center',color:"white"}}>search for any image.</p>:<ImagesResult clickHnadle = {this.onclickHandler} />}
        
