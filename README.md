@@ -1,5 +1,5 @@
 # pixabay-Gallery
-an image Gallery based on pixaby gallery.
+an image Gallery based on pixaby Api made with React.js.
 
 ## Index
 + [Demo](#demo)
