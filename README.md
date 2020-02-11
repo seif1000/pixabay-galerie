@@ -29,6 +29,6 @@ Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.co
 	```
 	$ npm start
 	```
-Your app should now be running on [localhost:8080](http://localhost:3000/).
+Your app should now be running on [localhost:3000](http://localhost:3000/).
 
 
